@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+</head>
+<label> Input your name: </label><input type="text" id="name">
+<button onclick="set()">Submit</button>
+<h3><a href="#" id="link"> Once you've entered your name click me!</a></h3>
+<script type=text/javascript>
+var x;
+var str1= "hello/";
+function set() {
+    x = document.getElementById("name").value;
+    var url = str1.concat(x);
+    document.getElementById('link').href = url;
+}
+</script>
+  </body>
+
+  </html>

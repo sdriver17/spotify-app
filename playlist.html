@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+</head>
+
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}
+
+<label> Input spotify username! </label><input type="text" id="account_name">
+<button onclick="set()">Submit</button>
+<h3><a href="#" id="link">Once you've submitted your spotify ID click here to see your account details!</a></h3>
+<script type=text/javascript>
+var x;
+var str1= "/user_details/";
+function set() {
+    x = document.getElementById("account_name").value;
+    var url = str1.concat(x);
+    document.getElementById('link').href = url;
+}
+</script>
+  </body>
+
+  </html>
