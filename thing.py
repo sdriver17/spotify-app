@@ -5,8 +5,10 @@ import requests
 # from requests_oauthlib import OAuth1
 
 @app.route('/user_details/<account_name>')
-def getPlaylists(account_name=None):
-   return render_template('user_details.html', account_name=account_name, r=requests.get('https://api.spotify.com/v1/users/jubujub17/'),)
+def getPlaylists(acccount_name=None):
+    account_name = account_name
+    response = requests.get('https://api.spotify.com/v1/users/'+ account_name).json()
+    return render_template('user_details.html', account_name=account_name, r=response)
 
 @app.route('/hello/<name>')
 def hello_world(name=None):
@@ -15,3 +17,6 @@ def hello_world(name=None):
 @app.route('/')
 def homepage():
     return render_template('index.html')
+
+if name == "main":
+    app.run()

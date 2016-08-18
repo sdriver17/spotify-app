@@ -3,20 +3,25 @@
 <html>
 
 <head>
-  <script   src="http://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-
 <title>User Details</title>
-
-
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.css"></link>
 </head>
 
 <body>
-
-<p> {{ r.text }} </p>
-<p> {{ r.text.id }} </p>
-
+<dl>
+    <dt>User Name</dt>
+    <dd> <p>{{ r.id }} </p> </dd>
+    <dt>Display Name</dt>
+    <dd> <p>{{ r.display_name }} </p></dd>
+    <dt>Followers</dt>
+    <dd> <p>{{ r.followers.total }} </p></dd>
+    <dt> Account Link
+    <dd><a href={{r.external_urls.spotify}}> <p> {{ r.external_urls.spotify }} </p> </a></dd>
+</dl>
 
 
 
